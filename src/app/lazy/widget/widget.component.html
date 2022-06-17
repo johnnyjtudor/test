@@ -1,0 +1,23 @@
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<div>
+    <header>
+        <h5>{{title}}</h5>
+        <button type='button' (click)="refreshContent()" [disabled]='!isContentVisible'>Refresh</button>
+    </header>
+
+    <ng-template [ngIf]='isContentVisible' [ngIfElse]='contentVisible'>
+        <ng-template [ngIf]='title==="Clock"' [ngIfElse]='iconChosen'>
+            <i class='fa fa-clock-o large-red'></i>
+        </ng-template>
+
+        <ng-template #iconChosen>
+            <i class='fa fa-sun-o large-red'></i>
+        </ng-template>
+
+        <p>{{text}}</p>
+    </ng-template>
+
+    <ng-template #contentVisible class='loader'>
+        <div class='loader'></div>
+    </ng-template>
+</div>

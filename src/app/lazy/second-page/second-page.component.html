@@ -1,0 +1,5 @@
+<button (click)='navigateToFirstPage()'>Visit First Page</button>
+
+<app-widget *ngFor='let widget of widgets' [title]='widget.title' [text]='widget.text'
+    [numberOfMilisecondsForLoading]='widget.numberOfMilisecondsForLoading'>
+</app-widget>
